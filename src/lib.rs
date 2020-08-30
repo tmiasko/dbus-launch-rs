@@ -22,7 +22,7 @@
 //! drop(daemon);
 //! ```
 //!
-//! ## Starting custom services using D-Bus activation
+//! ## Starting services using D-Bus activation
 //!
 //! ```no_run
 //! use std::path::Path;

@@ -1,6 +1,6 @@
-# dbus-daemon-rs
+# dbus-launch
 
-A tool for starting an new isolated instance of a dbus-daemon or a
+An utility for starting an new isolated instance of a dbus-daemon or a
 dbus-broker, with option to configure and start services using D-Bus
 activation.
 
@@ -20,7 +20,7 @@ let daemon = dbus_launch::Launcher::daemon()
 drop(daemon);
 ```
 
-## Starting custom services using D-Bus activation
+## Starting services using D-Bus activation
 
 ```rust
 use std::path::Path;
