@@ -1,0 +1,26 @@
+[package]
+name = "dbus-launch"
+version = "0.2.0"
+authors = ["Tomasz Miąsko"]
+keywords = ["D-Bus", "dbus", "dbus-daemon", "dbus-launch"]
+repository = "https://github.com/tmiasko/dbus-launch-rs"
+license = "MIT"
+edition = "2018"
+description = "A D-Bus daemon launcher"
+exclude = [
+  ".github/",
+]
+
+[dependencies]
+tempfile = "3"
+libc = "0.2"
+
+[[test]]
+name = "fds"
+path = "tests/fds.rs"
+harness = false
+
+[[test]]
+name = "launch_error"
+path = "tests/launch_error.rs"
+harness = false

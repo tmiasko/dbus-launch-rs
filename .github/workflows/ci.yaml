@@ -1,0 +1,23 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  RUST_BACKTRACE: 1
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dbus
+        run: brew install dbus
+        if: ${{ matrix.os == 'macos-latest' }}
+      - name: cargo test
+        run: cargo test --workspace --verbose --no-fail-fast -- --nocapture
